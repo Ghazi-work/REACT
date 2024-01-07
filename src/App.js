@@ -42,7 +42,7 @@ function App() {
   return (
     <>
       <div className='main-sec'>
-        <h2>Todo List</h2>
+        <h2>Todo List app</h2>
         <div className='row'>
           <div className='col-md-10 pt-3'>
             <input type='text' className='form-control' value={task} onChange={handleOnChange}  onKeyDown={handleKeyDown}/>
