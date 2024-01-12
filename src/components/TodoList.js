@@ -1,49 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
 import { useState } from 'react';
-import TodoList from './components/TodoList';
 
-function App() {
+const TodoList = () => {
 
-  // const [list,setList] = useState([])
-  // const [task,setTask] = useState('')
+  const [list,setList] = useState([])
+  const [task,setTask] = useState('')
 
-  // function handleText(){
-  //   if (task !== null && task !== '') {
-  //     setList([...list,task]);
-  //     setTask('') // Empty after add
-  //   }
+  function handleText(){
+    if (task !== null && task !== '') {
+      setList([...list,task]);
+      setTask('') // Empty after add
+    }
     
-  // }
+  }
 
-  // function handleOnChange(e){
-  //   setTask(e.target.value)
-  // }
+  function handleOnChange(e){
+    setTask(e.target.value)
+  }
 
-  // function deleteHandler(id){
+  function deleteHandler(id){
 
-  //   let newList = [];
-  //   list.filter((item,count)=>{
-  //     if (count !== id) 
-  //     {
-  //       newList.push(item);
+    let newList = [];
+    list.filter((item,count)=>{
+      if (count !== id) 
+      {
+        newList.push(item);
         
-  //     }
-  //   })
-  //   setList(newList)
+      }
+    })
+    setList(newList)
 
-  // }
+  }
   
-  // function handleKeyDown(e) {
-  //   if (e.key === 'Enter') {
-  //     handleText();
-  //   }
-  // }
+  function handleKeyDown(e) {
+    if (e.key === 'Enter') {
+      handleText();
+    }
+  }
 
   return (
-    <>
-      {/* <div className='main-sec'>
-        <h2>Todo List app inprocess</h2>
+    <div>
+       <div className='main-sec'>
+        <h2>Todo List app</h2>
         <div className='row'>
           <div className='col-md-10 pt-3'>
             <input type='text' className='form-control' value={task} onChange={handleOnChange}  onKeyDown={handleKeyDown}/>
@@ -52,7 +50,10 @@ function App() {
             <button className='btn btn-primary' onClick={()=> handleText()} >Add</button>
           </div>
         </div>
-       
+        {/* <div className='todo-item' >
+          <p>Task here</p>
+          <button className='btn btn-danger'>Delete</button>
+        </div> */}
       </div>
 
       <div className='row mt-5 mx-3'>
@@ -66,18 +67,14 @@ function App() {
                   <button className='btn btn-danger' onClick={()=> deleteHandler(count)}>Delete</button>
                 </div>
              </div>
-            ) 
+            )
            })
          
         
         }
-      </div> */}
-
-      <TodoList/>
-
-      
-    </>
-  );
+      </div>
+    </div>
+  )
 }
 
-export default App;
+export default TodoList
